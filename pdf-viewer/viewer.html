@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magnifier PDF Viewer</title>
+  <link rel="stylesheet" href="../content.css" />
+  <link rel="stylesheet" href="viewer.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <div class="brand">Magnifier PDF Viewer</div>
+    <label class="picker-label" for="pdfFileInput">Choose PDF</label>
+    <input id="pdfFileInput" type="file" accept="application/pdf" />
+    <button id="clearBtn" type="button">Clear</button>
+    <div class="hint">Enable magnifier in the extension popup, then hover over the page.</div>
+  </header>
+
+  <main id="viewerRoot" class="viewer-root">
+    <div id="emptyState" class="empty-state">Select a PDF file to render it here.</div>
+    <div id="pdfContainer" class="pdf-container"></div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous"></script>
+  <script src="viewer.js"></script>
+  <script src="../content.js"></script>
+</body>
+</html>
