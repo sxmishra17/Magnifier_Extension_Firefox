@@ -1,118 +1,88 @@
 # Magnifier — Firefox Extension
 
-Hover over any content on a web page to instantly magnify it in a floating lens overlay. Works on text, images, and PDFs — no configuration required.
+> Hover over any text, image, or PDF to magnify it with a customizable lens. Choose circle or rectangle shape, zoom 1×–10×, three lens sizes, and five cursor positions.
 
 ---
 
 ## Features
 
-| Feature | Details |
-|---|---|
-| **Text magnification** | Reads font, weight, colour, and background from the hovered element and renders it enlarged inside the lens |
-| **Image magnification** | Zooms into `<img>` elements and CSS background images with pixel-accurate centering |
-| **PDF magnification** | Built-in PDF viewer renders PDF pages to canvas and magnifies them without CORS restrictions |
-| **Circle & Rectangle lens** | Switch between a circular loupe and a wide rectangular banner lens |
-| **Zoom 1× – 10×** | Smooth 0.5-step slider |
-| **Three lens sizes** | Small / Medium / Large |
-| **Five cursor positions** | Left · Right · Above · Below · Centered |
-| **Per-tab enable/disable** | Magnifier state is local to each tab; other tabs are never affected |
-| **Keyboard shortcuts** | `Ctrl+M` toggles the magnifier; `Escape` turns it off |
-| **Settings sync** | Zoom, size, shape, and position are synced across devices via Firefox Sync |
+- 🔍 **Text Magnification** — Hover over any text on a webpage to see it enlarged in a floating lens
+- 🖼️ **Image Magnification** — Works on images and inline graphics
+- 📄 **PDF Support** — Built-in PDF viewer with magnifier support for local PDF files
+- ⭕ **Circle or Rectangle** — Choose your preferred lens shape
+- 🔎 **Zoom 1×–10×** — Fine-grained zoom control from 1× up to 10×
+- 📐 **Three Lens Sizes** — Small, medium, and large lens options
+- 🖱️ **Five Cursor Positions** — Position the lens relative to your cursor
+- 💾 **Persistent Settings** — All preferences are saved across sessions
+- 🔘 **On/Off Toggle** — Enable or disable the magnifier with one click
 
 ---
 
 ## Installation
 
 ### From Firefox Add-ons (AMO)
-*(Link will appear here after the extension is published.)*
+Search **"Magnifier"** on [addons.mozilla.org](https://addons.mozilla.org)
 
-### Manual / Developer Installation
-1. Clone or download this repository.
-2. Open Firefox and navigate to `about:debugging`.
-3. Click **This Firefox** → **Load Temporary Add-on**.
-4. Select the `manifest.json` file.
-
----
-
-## Usage
-
-1. Click the **Magnifier** icon in the toolbar to open the settings popup.
-2. Toggle the switch **ON** to activate the magnifier for the current tab.
-3. Move the mouse over any text, image, or element — the lens appears automatically.
-4. Adjust **Zoom Level**, **Lens Size**, **Lens Shape**, and **Position** in the popup; changes apply instantly.
-
-### PDF Viewer
-Click **Open PDF Viewer** in the popup to open the built-in viewer. Drop any PDF file in, enable the magnifier, then hover over the rendered pages.
+### Developer Install
+1. Open `about:debugging#/runtime/this-firefox`
+2. Click **Load Temporary Add-on**
+3. Select `manifest.json` from this folder
 
 ---
 
-## Permissions
+## How to Use
 
-| Permission | Reason |
-|---|---|
-| `storage` | Saves zoom, size, shape, and position settings via Firefox Sync |
-| `tabs` | Lets the background script relay enable/disable state to specific tabs |
-| `activeTab` | Reads the active tab when the popup is open |
+1. Click the **Magnifier** icon in the Firefox toolbar to open settings
+2. Toggle the magnifier **ON**
+3. Choose your preferred **zoom level**, **lens shape**, and **size**
+4. Hover over any text or image on the page — a magnified view appears
+5. For PDFs, use the built-in viewer for best results
 
 ---
 
-## File Structure
+## Project Structure
 
 ```
-manifest.json          — Extension manifest (MV2)
-background.js          — Background service: tracks per-tab state, relays messages
-content.js             — Injected into every page: builds lens, handles magnification
-content.css            — Lens overlay styles
-icons/
-  icon-48.png
-  icon-96.png
-popup/
-  popup.html           — Settings panel markup
-  popup.css            — Settings panel styles
-  popup.js             — Settings panel logic
-pdf-viewer/
-  viewer.html          — Built-in PDF viewer page
-  viewer.css           — PDF viewer styles
-  viewer.js            — PDF.js integration (renders pages to canvas)
+├── manifest.json          # MV2 manifest
+├── background.js          # Background script — state management
+├── content.js             # Content script — lens rendering and mouse tracking
+├── content.css            # Lens styles and animations
+├── popup/
+│   ├── popup.html         # Settings popup UI
+│   ├── popup.css          # Popup styles
+│   └── popup.js           # Settings controls
+├── pdf-viewer/
+│   ├── viewer.html        # Built-in PDF viewer
+│   ├── viewer.css         # PDF viewer styles
+│   ├── viewer.js          # PDF viewer logic with magnifier integration
+│   └── lib/
+│       ├── pdf.min.js     # PDF.js library
+│       └── pdf.worker.min.js
+└── icons/                 # Extension icons (48, 96px)
 ```
 
 ---
 
-## Architecture
+## Third-Party Libraries
 
-```
-Popup ──(storage.sync.set + sendMessage)──► Content Script
-  │                                              │
-  └──(runtime.sendMessage)──► Background ───────┘
-                                   │
-                             tabEnabled Map
-                             (in-memory, per-tab)
-```
-
-- **Settings** (zoom, size, shape, position) are shared via `browser.storage.sync` and reflected to content scripts through both storage change events and direct messages.
-- **Enabled state** is tab-local and never persisted; it lives only in the background script's `Map` and is relayed to each tab's content script via `sendMessage`.
+| Library | License | Purpose |
+|---------|---------|---------|
+| [PDF.js](https://github.com/mozilla/pdf.js) | Apache 2.0 | PDF rendering in the built-in viewer |
 
 ---
 
-## Browser Compatibility
+## Privacy
 
-| Browser | Support |
-|---|---|
-| Firefox 109+ | ✅ Full support (Manifest V2) |
-| Firefox for Android | ✅ (popup layout adapts) |
-| Chrome / Edge | ❌ Uses `browser.*` API (not `chrome.*`) |
+**No data leaves your device.** Settings are stored locally using `browser.storage.local`. No external network requests are made.
 
 ---
 
-## Version History
+## Developer
 
-| Version | Changes |
-|---|---|
-| 1.1.0 | Fixed image magnification centering in rectangle lens mode; refactored shared dimension logic; tightened Content Security Policy |
-| 1.0.0 | Initial release |
+**YuvaTech**
 
 ---
 
 ## License
 
-MIT © Magnifier contributors
+MIT License — free to use, modify, and distribute.
