@@ -86,3 +86,7 @@ Search **"Magnifier"** on [addons.mozilla.org](https://addons.mozilla.org)
 ## License
 
 All Rights Reserved.
+
+---
+
+Developed by **Satish Mishra**, **Yuvatech Solutions USA, LLC**
