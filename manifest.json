@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Magnifier",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Hover over any text, image, or PDF to magnify it with a customisable lens. Choose circle or rectangle shape, zoom 1×–10×, three lens sizes, and five cursor positions.",
   "author": "Magnifier Extension",
 
@@ -49,5 +49,10 @@
     "storage",
     "activeTab",
     "tabs"
+  ],
+
+  "web_accessible_resources": [
+    "locales.js",
+    "pdf-viewer/*"
   ]
 }

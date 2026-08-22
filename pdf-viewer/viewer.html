@@ -9,11 +9,11 @@
 </head>
 <body>
   <header class="toolbar">
-    <div class="brand">Magnifier PDF Viewer</div>
-    <label class="picker-label" for="pdfFileInput">Choose PDF</label>
+    <div class="brand" id="pdfBrand">Magnifier PDF Viewer</div>
+    <label class="picker-label" for="pdfFileInput" id="lblChoosePdf">Choose PDF</label>
     <input id="pdfFileInput" type="file" accept="application/pdf" />
     <button id="clearBtn" type="button">Clear</button>
-    <div class="hint">Enable magnifier in the extension popup, then hover over the page.</div>
+    <div class="hint" id="pdfHint">Enable magnifier in the extension popup, then hover over the page.</div>
   </header>
 
   <main id="viewerRoot" class="viewer-root">
@@ -22,6 +22,7 @@
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous"></script>
+  <script src="../locales.js"></script>
   <script src="viewer.js"></script>
   <script src="../content.js"></script>
 </body>

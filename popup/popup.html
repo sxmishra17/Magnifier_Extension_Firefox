@@ -25,20 +25,27 @@
       </svg>
     </div>
     <div class="title-block">
-      <h1>Magnifier</h1>
-      <span class="subtitle">Hover to magnify</span>
+      <h1 id="txtAppTitle">Magnifier</h1>
+      <span class="subtitle" id="txtSubtitle">Hover to magnify</span>
     </div>
-    <label class="toggle" title="Enable / Disable magnifier">
-      <input type="checkbox" id="enableToggle" />
-      <span class="slider"></span>
-    </label>
+    <div class="toggle-group">
+      <label class="toggle" title="Enable / Disable magnifier (Ctrl+M)">
+        <input type="checkbox" id="enableToggle" />
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-hotkey" title="Toggle shortcut: Ctrl+M">Ctrl+M</span>
+    </div>
+  </div>
+
+  <div class="hotkey-banner">
+    <span id="txtPressHotkey">Press Ctrl+M to activate / deactivate</span>
   </div>
 
   <div class="divider"></div>
 
   <div class="section">
     <div class="section-label">
-      <span>Zoom Level</span>
+      <span id="txtZoomLevel">Zoom Level</span>
       <span class="value-badge" id="zoomBadge">3×</span>
     </div>
     <input type="range" id="zoomSlider" min="1" max="10" step="0.5" value="3" />
@@ -53,31 +60,31 @@
 
   <div class="section">
     <div class="section-label">
-      <span>Lens Size</span>
+      <span id="txtLensSize">Lens Size</span>
       <span class="value-badge" id="sizeBadge">Medium</span>
     </div>
     <input type="range" id="sizeSlider" min="1" max="3" step="1" value="2" />
     <div class="range-labels">
-      <span>Small</span>
-      <span>Medium</span>
-      <span>Large</span>
+      <span id="txtSizeSmall">Small</span>
+      <span id="txtSizeMedium">Medium</span>
+      <span id="txtSizeLarge">Large</span>
     </div>
   </div>
 
   <div class="divider"></div>
 
   <div class="section">
-    <div class="section-label"><span>Lens Shape</span></div>
+    <div class="section-label"><span id="txtLensShape">Lens Shape</span></div>
     <div class="lens-options">
       <label class="lens-option" id="opt-circle">
         <input type="radio" name="lensShape" value="circle" />
         <div class="shape-preview circle-shape"></div>
-        <span>Circle</span>
+        <span id="txtCircle">Circle</span>
       </label>
       <label class="lens-option" id="opt-rect">
         <input type="radio" name="lensShape" value="rect" />
         <div class="shape-preview rect-shape"></div>
-        <span>Rectangle</span>
+        <span id="txtRectangle">Rectangle</span>
       </label>
     </div>
   </div>
@@ -85,7 +92,7 @@
   <div class="divider"></div>
 
   <div class="section">
-    <div class="section-label"><span>Lens Position</span></div>
+    <div class="section-label"><span id="txtLensPos">Lens Position</span></div>
     <div class="pos-grid">
       <span class="pos-empty"></span>
       <label class="pos-option" title="Above cursor">
@@ -114,11 +121,25 @@
     </div>
   </div>
 
-  <div class="footer">
-    <button id="openPdfViewer" class="pdf-button" type="button">Open PDF Viewer</button>
-    <span>Settings are saved automatically</span>
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-label"><span id="txtLanguage">Language</span></div>
+    <select id="langSelect" class="lang-select">
+      <!-- Populated dynamically by popup.js from locales.js -->
+    </select>
   </div>
 
+  <div class="footer">
+    <button id="openPdfViewer" class="pdf-button" type="button">Open PDF Viewer</button>
+    <a id="downloadDesktopApp" href="https://github.com/sxmishra17/Magnifier_Extension_Firefox/releases" target="_blank" class="desktop-link" title="Download standalone Windows desktop application">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.95-9.6L24 0v11.4H10.95M0 12.6h9.75v9.451L0 20.699M10.95 12.6H24V24l-13.05-1.85"/></svg>
+      <span id="txtDownloadDesktop">Download for Desktop</span>
+    </a>
+    <span id="txtSavedAuto">Settings are saved automatically</span>
+  </div>
+
+  <script src="../locales.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

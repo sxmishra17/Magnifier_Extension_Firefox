@@ -6,7 +6,7 @@ const tabEnabled = new Map();
 browser.runtime.onInstalled.addListener((details) => {
   if (details.reason === "install") {
     // "enabled" is intentionally omitted — it is tab-local, not shared
-    browser.storage.sync.set({ zoom: 1.5, lensSize: "medium", lensPosition: "right", lensShape: "rect" });
+    browser.storage.sync.set({ zoom: 1.5, lensSize: "medium", lensPosition: "right", lensShape: "rect", language: "auto" });
   }
 });
 

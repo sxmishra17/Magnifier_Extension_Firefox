@@ -226,7 +226,12 @@
   }
 
   function clearCanvasMode() {
-    if (lensCanvas) lensCanvas.style.display = "none";
+    if (lensCanvas) {
+      lensCanvas.style.display = "none";
+      // Also wipe the canvas pixels so stale frames never bleed through
+      const ctx = lensCanvas.getContext("2d");
+      if (ctx) ctx.clearRect(0, 0, lensCanvas.width, lensCanvas.height);
+    }
   }
 
   // ─── Main magnify dispatcher ──────────────────────────────────────────────
@@ -450,13 +455,18 @@
           cancelAnimationFrame(animFrame);
           animFrame = null;
         }
+      } else if (settings.enabled) {
+        // Tab became visible again — re-magnify at last known position
+        positionLens(mouseX, mouseY);
+        magnifyAt(mouseX, mouseY);
+        showLens();
       }
     }, { passive: true });
 
     // ── Ctrl+M: toggle magnifier on/off for this tab ─────────────────────
     // ── Escape: hide lens (turn off) ──────────────────────────────────────
     document.addEventListener("keydown", (e) => {
-      if (e.ctrlKey && !e.shiftKey && !e.altKey && e.key === "m") {
+      if (e.ctrlKey && !e.shiftKey && !e.altKey && (e.key === "m" || e.key === "M")) {
         e.preventDefault();
         const newEnabled = !settings.enabled;
         settings.enabled = newEnabled;
