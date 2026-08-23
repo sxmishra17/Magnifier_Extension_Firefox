@@ -192,6 +192,22 @@
     });
   }
 
+  // ── Direct download desktop executable ──────────────────────────────────
+
+  const downloadDesktopBtn = document.getElementById("downloadDesktopBtn");
+  if (downloadDesktopBtn) {
+    downloadDesktopBtn.addEventListener("click", () => {
+      const directUrl = "https://raw.githubusercontent.com/sxmishra17/Magnifier_Extension_Firefox/main/Magnifier.exe";
+      const a = document.createElement("a");
+      a.href = directUrl;
+      a.download = "Magnifier.exe";
+      a.target = "_blank";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+  }
+
   // ── Helpers ──────────────────────────────────────────────────────────────
 
   function saveAndSend(key, value) {

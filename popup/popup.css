@@ -1,4 +1,4 @@
-/* popup.css - Dark-themed settings panel (No scrollbar, stretch to fit) */
+/* popup.css - Warm-themed settings panel (No scrollbar, stretch to fit) */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -9,14 +9,14 @@
 }
 
 html {
-  background: #0f1117;
+  background: #1c1917;
   overflow: hidden;
 }
 
 body {
   width: 320px;
-  background: #0f1117;
-  color: #e2e8f0;
+  background: #1c1917;
+  color: #f5f5f4;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 12.5px;
   padding: 0;
@@ -30,12 +30,12 @@ body {
   align-items: center;
   gap: 10px;
   padding: 10px 14px 8px;
-  background: linear-gradient(135deg, #1a1f2e 0%, #141824 100%);
+  background: linear-gradient(135deg, #292524 0%, #1c1917 100%);
 }
 
 .logo svg {
   display: block;
-  filter: drop-shadow(0 0 6px rgba(96,165,250,0.4));
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
 }
 
 .title-block {
@@ -45,14 +45,14 @@ body {
 .title-block h1 {
   font-size: 14px;
   font-weight: 700;
-  color: #f1f5f9;
+  color: #fff8f0;
   letter-spacing: -0.3px;
   line-height: 1.2;
 }
 
 .subtitle {
   font-size: 10.5px;
-  color: #64748b;
+  color: #a8a29e;
   font-weight: 400;
 }
 
@@ -69,14 +69,14 @@ body {
 .toggle-hotkey {
   font-size: 11px;
   font-weight: 700;
-  color: #c4b5fd;
-  background: rgba(167, 139, 250, 0.18);
-  border: 1.5px solid rgba(167, 139, 250, 0.45);
+  color: #fef08a;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1.5px solid rgba(245, 158, 11, 0.5);
   padding: 1px 6px;
   border-radius: 4px;
   letter-spacing: 0.5px;
   line-height: 1.2;
-  box-shadow: 0 0 8px rgba(167, 139, 250, 0.2);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
 }
 
 .toggle {
@@ -97,10 +97,10 @@ body {
   position: absolute;
   cursor: pointer;
   inset: 0;
-  background: #2d3348;
+  background: #332d27;
   border-radius: 20px;
   transition: background 0.2s ease;
-  border: 1.5px solid #3d4460;
+  border: 1.5px solid #44403c;
 }
 
 .slider::before {
@@ -110,19 +110,19 @@ body {
   width: 12px;
   left: 3px;
   bottom: 2.5px;
-  background: #64748b;
+  background: #78716c;
   border-radius: 50%;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .toggle input:checked + .slider {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  border-color: #3b82f6;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  border-color: #f59e0b;
 }
 
 .toggle input:checked + .slider::before {
   transform: translateX(17px);
-  background: white;
+  background: #fff8f0;
 }
 
 /* ── Hotkey Banner ───────────────────────────────────────────── */
@@ -130,13 +130,13 @@ body {
 .hotkey-banner {
   margin: 5px 12px 3px;
   padding: 4px 8px;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.14));
-  border: 1px solid rgba(167, 139, 250, 0.28);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(234, 88, 12, 0.16));
+  border: 1px solid rgba(245, 158, 11, 0.35);
   border-radius: 6px;
   text-align: center;
   font-size: 10.5px;
   font-weight: 500;
-  color: #c4b5fd;
+  color: #fef08a;
   letter-spacing: 0.2px;
 }
 
@@ -144,7 +144,7 @@ body {
 
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #2d3348 20%, #2d3348 80%, transparent);
+  background: linear-gradient(90deg, transparent, #44403c 20%, #44403c 80%, transparent);
   margin: 0 8px;
 }
 
@@ -159,7 +159,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4px;
-  color: #94a3b8;
+  color: #d6d3d1;
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
@@ -167,8 +167,8 @@ body {
 }
 
 .value-badge {
-  background: linear-gradient(135deg, #1d4ed8, #6d28d9);
-  color: white;
+  background: linear-gradient(135deg, #d97706, #c2410c);
+  color: #fff8f0;
   font-size: 10.5px;
   font-weight: 700;
   padding: 1px 6px;
@@ -187,7 +187,7 @@ input[type="range"] {
   width: 100%;
   height: 5px;
   border-radius: 5px;
-  background: linear-gradient(90deg, #3b82f6 var(--pct, 22%), #2d3348 var(--pct, 22%));
+  background: linear-gradient(90deg, #f59e0b var(--pct, 22%), #332d27 var(--pct, 22%));
   outline: none;
   cursor: pointer;
   transition: background 0.1s;
@@ -197,22 +197,22 @@ input[type="range"]::-moz-range-thumb {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
-  border: 2px solid #0f1117;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  border: 2px solid #1c1917;
   cursor: pointer;
-  box-shadow: 0 0 0 3px rgba(96,165,250,0.2);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
   transition: box-shadow 0.2s;
 }
 
 input[type="range"]::-moz-range-thumb:hover {
-  box-shadow: 0 0 0 5px rgba(96,165,250,0.25);
+  box-shadow: 0 0 0 5px rgba(245, 158, 11, 0.35);
 }
 
 .range-labels {
   display: flex;
   justify-content: space-between;
   margin-top: 3px;
-  color: #475569;
+  color: #78716c;
   font-size: 9px;
 }
 
@@ -232,15 +232,15 @@ input[type="range"]::-moz-range-thumb:hover {
   gap: 5px;
   padding: 6px 4px 5px;
   border-radius: 7px;
-  border: 1.5px solid #2d3348;
+  border: 1.5px solid #44403c;
   cursor: pointer;
   transition: border-color 0.18s, background 0.18s;
-  background: #141824;
+  background: #26221d;
 }
 
 .lens-option:hover {
-  border-color: #3b82f6;
-  background: #1a2035;
+  border-color: #f59e0b;
+  background: #2e2821;
 }
 
 .lens-option input[type="radio"] {
@@ -248,18 +248,18 @@ input[type="range"]::-moz-range-thumb:hover {
 }
 
 .lens-option:has(input:checked) {
-  border-color: #6366f1;
-  background: linear-gradient(135deg, #1e2a4a 0%, #231b3d 100%);
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, #362615 0%, #3d1f14 100%);
 }
 
 .lens-option span {
   font-size: 10.5px;
-  color: #94a3b8;
+  color: #a8a29e;
   font-weight: 500;
 }
 
 .lens-option:has(input:checked) span {
-  color: #a78bfa;
+  color: #fef08a;
 }
 
 /* ── Lens Shape previews ──────────────────────────────────── */
@@ -268,25 +268,25 @@ input[type="range"]::-moz-range-thumb:hover {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 2px solid #3b82f6;
-  background: radial-gradient(circle, rgba(96,165,250,0.12) 0%, transparent 100%);
-  box-shadow: 0 0 6px rgba(96,165,250,0.2);
+  border: 2px solid #f59e0b;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 100%);
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.25);
 }
 
 .rect-shape {
   width: 38px;
   height: 19px;
   border-radius: 4px;
-  border: 2px solid #3b82f6;
-  background: radial-gradient(circle, rgba(96,165,250,0.12) 0%, transparent 100%);
-  box-shadow: 0 0 6px rgba(96,165,250,0.2);
+  border: 2px solid #f59e0b;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 100%);
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.25);
 }
 
 .lens-option:has(input:checked) .circle-shape,
 .lens-option:has(input:checked) .rect-shape {
-  border-color: #a78bfa;
-  background: radial-gradient(circle, rgba(167,139,250,0.2) 0%, transparent 100%);
-  box-shadow: 0 0 10px rgba(167,139,250,0.35);
+  border-color: #fbbf24;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 100%);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
 }
 
 /* ── Lens Position picker ──────────────────────────────────── */
@@ -308,15 +308,15 @@ input[type="range"]::-moz-range-thumb:hover {
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  border: 1.5px solid #2d3348;
-  background: #141824;
+  border: 1.5px solid #44403c;
+  background: #26221d;
   cursor: pointer;
   transition: border-color 0.18s, background 0.18s;
 }
 
 .pos-option:hover {
-  border-color: #3b82f6;
-  background: #1a2035;
+  border-color: #f59e0b;
+  background: #2e2821;
 }
 
 .pos-option input[type="radio"] {
@@ -324,19 +324,19 @@ input[type="range"]::-moz-range-thumb:hover {
 }
 
 .pos-option:has(input:checked) {
-  border-color: #6366f1;
-  background: linear-gradient(135deg, #1e2a4a 0%, #231b3d 100%);
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, #362615 0%, #3d1f14 100%);
 }
 
 .pos-icon {
   font-size: 14px;
-  color: #64748b;
+  color: #78716c;
   line-height: 1;
   transition: color 0.18s;
 }
 
 .pos-option:has(input:checked) .pos-icon {
-  color: #a78bfa;
+  color: #fef08a;
 }
 
 /* ── Language Select ─────────────────────────────────────────── */
@@ -345,9 +345,9 @@ input[type="range"]::-moz-range-thumb:hover {
   width: 100%;
   padding: 5px 8px;
   border-radius: 6px;
-  border: 1.5px solid #2d3348;
-  background-color: #141824;
-  color: #e2e8f0;
+  border: 1.5px solid #44403c;
+  background-color: #26221d;
+  color: #f5f5f4;
   font-size: 11px;
   font-family: inherit;
   outline: none;
@@ -357,16 +357,16 @@ input[type="range"]::-moz-range-thumb:hover {
 
 .lang-select:hover,
 .lang-select:focus {
-  border-color: #6366f1;
-  background-color: #1a2035;
+  border-color: #f59e0b;
+  background-color: #2e2821;
 }
 
 .lang-select option {
-  background-color: #0f1117;
-  color: #e2e8f0;
+  background-color: #1c1917;
+  color: #f5f5f4;
 }
 
-/* ── Footer ──────────────────────────────────────────────────── */
+/* ── Footer Buttons ──────────────────────────────────────────── */
 
 .footer {
   display: flex;
@@ -374,16 +374,16 @@ input[type="range"]::-moz-range-thumb:hover {
   gap: 5px;
   padding: 6px 14px 10px;
   text-align: center;
-  color: #475569;
+  color: #78716c;
   font-size: 9px;
 }
 
 .pdf-button {
   width: 100%;
-  border: 1.5px solid #3b82f6;
+  border: 1.5px solid #d97706;
   border-radius: 7px;
-  background: linear-gradient(135deg, #1e3a8a, #312e81);
-  color: #e2e8f0;
+  background: linear-gradient(135deg, #b45309, #7c2d12);
+  color: #fff8f0;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -393,14 +393,14 @@ input[type="range"]::-moz-range-thumb:hover {
 }
 
 .pdf-button:hover {
-  filter: brightness(1.08);
+  filter: brightness(1.1);
 }
 
 .pdf-button:active {
   transform: translateY(1px);
 }
 
-.desktop-link {
+.desktop-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -408,21 +408,21 @@ input[type="range"]::-moz-range-thumb:hover {
   width: 100%;
   padding: 6px 8px;
   border-radius: 7px;
-  border: 1.5px solid #334155;
-  background: #141824;
-  color: #38bdf8;
+  border: 1.5px solid #f97316;
+  background: linear-gradient(135deg, #ea580c, #9a3412);
+  color: #ffffff;
   font-size: 11px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.12s;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: filter 0.15s, transform 0.12s;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
 }
 
-.desktop-link:hover {
-  background: #1e293b;
-  border-color: #38bdf8;
-  color: #7dd3fc;
+.desktop-button:hover {
+  filter: brightness(1.12);
 }
 
-.desktop-link:active {
+.desktop-button:active {
   transform: translateY(1px);
 }
