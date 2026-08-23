@@ -1,0 +1,20 @@
+# .gitignore for Magnifier Extension & Desktop App
+
+# Debug & Temporary Build Outputs
+magnifier-debug.xpi
+magnifier-debug.zip
+*.log
+*.tmp
+*.bak
+
+# IDE & Editor files
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS Metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
