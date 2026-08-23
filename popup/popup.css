@@ -426,3 +426,26 @@ input[type="range"]::-moz-range-thumb:hover {
 .desktop-button:active {
   transform: translateY(1px);
 }
+
+.company-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(68, 64, 60, 0.45);
+}
+
+.company-logo {
+  height: 18px;
+  width: auto;
+  object-fit: contain;
+}
+
+.company-name {
+  font-size: 10px;
+  font-weight: 600;
+  color: #a8a29e;
+  letter-spacing: 0.2px;
+}

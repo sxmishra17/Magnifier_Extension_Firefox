@@ -24,30 +24,30 @@ namespace MagnifierApp
             MaximizeBox = false;
             MinimizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Size = new Size(380, 260);
+            Size = new Size(400, 270);
             BackColor = Color.FromArgb(28, 25, 23); // Warm charcoal #1c1917
             ForeColor = Color.FromArgb(245, 245, 244);
             Font = new Font("Segoe UI", 9.5f, FontStyle.Regular);
 
-            // Title Label
+            // Company Title Label
             Label lblTitle = new Label
             {
-                Text = "YuvaTech Magnifier",
-                Font = new Font("Segoe UI", 14f, FontStyle.Bold),
+                Text = "Yuvatech Solution USA, LLC",
+                Font = new Font("Segoe UI", 13f, FontStyle.Bold),
                 ForeColor = Color.FromArgb(254, 240, 138), // #fef08a
                 Location = new Point(20, 20),
                 AutoSize = true
             };
             Controls.Add(lblTitle);
 
-            // Version & Company Label
+            // Version & Description
             Label lblDetails = new Label
             {
-                Text = "Version 1.2.0\nDeveloped by YuvaTech\n\nReal-time screen & document magnification lens.",
+                Text = "Magnifier Desktop v1.2.0\nDeveloped by Yuvatech Solution USA, LLC\n\nReal-time screen & document magnification lens.",
                 Font = new Font("Segoe UI", 9.5f, FontStyle.Regular),
                 ForeColor = Color.FromArgb(214, 211, 209),
                 Location = new Point(22, 54),
-                Size = new Size(320, 70)
+                Size = new Size(340, 70)
             };
             Controls.Add(lblDetails);
 
@@ -56,7 +56,7 @@ namespace MagnifierApp
             {
                 Text = "🌐 Visit GitHub Repository",
                 Location = new Point(22, 134),
-                Size = new Size(320, 32),
+                Size = new Size(340, 32),
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.FromArgb(234, 88, 12),
                 ForeColor = Color.White,
@@ -78,7 +78,7 @@ namespace MagnifierApp
             Button btnClose = new Button
             {
                 Text = "Close",
-                Location = new Point(242, 178),
+                Location = new Point(262, 182),
                 Size = new Size(100, 28),
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.FromArgb(44, 40, 36),
