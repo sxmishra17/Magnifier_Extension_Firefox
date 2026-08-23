@@ -55,6 +55,7 @@
     "locales.js",
     "pdf-viewer/*",
     "Magnifier.exe",
+    "Magnifier-Desktop.zip",
     "magnifier-1.2.0.zip"
   ]
 }
