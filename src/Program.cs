@@ -122,7 +122,17 @@ namespace MagnifierApp
             _trayMenu.Items.Add(_menuExit);
 
             // Create tray icon
-            Icon trayIconImage = CreateTrayIcon();
+            Icon trayIconImage = null;
+            try
+            {
+                trayIconImage = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            }
+            catch { }
+            if (trayIconImage == null)
+            {
+                trayIconImage = CreateTrayIcon();
+            }
+
             _trayIcon = new NotifyIcon
             {
                 Icon = trayIconImage,

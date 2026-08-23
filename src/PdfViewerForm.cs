@@ -24,6 +24,11 @@ namespace MagnifierApp
         private void InitializeComponent()
         {
             Text = Localization.Get("PdfTitle");
+            try
+            {
+                Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            }
+            catch { }
             StartPosition = FormStartPosition.CenterScreen;
             Size = new Size(960, 720);
             BackColor = Color.FromArgb(15, 18, 27); // #0f121b

@@ -70,6 +70,11 @@ namespace MagnifierApp
         private void InitializeForm()
         {
             Text = Localization.Get("AppTitle") + " " + Localization.Get("SettingsMenu").Replace(".", "");
+            try
+            {
+                Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            }
+            catch { }
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;

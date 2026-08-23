@@ -29,6 +29,11 @@ namespace MagnifierApp
         private void InitializeComponent()
         {
             Text = Localization.Get("HkTitle");
+            try
+            {
+                Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            }
+            catch { }
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
