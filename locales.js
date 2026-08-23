@@ -254,8 +254,9 @@
 
   function resolveLanguage(langSetting) {
     if (!langSetting || langSetting === "auto") {
-      const browserLang = (navigator.language || "en").slice(0, 2).toLowerCase();
-      return TRANSLATIONS[browserLang] ? browserLang : "en";
+      const rawLang = navigator.language || (navigator.languages && navigator.languages[0]) || "en";
+      const sysLang = rawLang.slice(0, 2).toLowerCase();
+      return TRANSLATIONS[sysLang] ? sysLang : "en";
     }
     return TRANSLATIONS[langSetting] ? langSetting : "en";
   }
