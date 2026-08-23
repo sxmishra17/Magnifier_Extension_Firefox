@@ -192,15 +192,15 @@
     });
   }
 
-  // ── Direct download desktop executable ──────────────────────────────────
+  // ── Direct download desktop release package (.zip) ─────────────────────────
 
   const downloadDesktopBtn = document.getElementById("downloadDesktopBtn");
   if (downloadDesktopBtn) {
     downloadDesktopBtn.addEventListener("click", () => {
-      const directUrl = "https://raw.githubusercontent.com/sxmishra17/Magnifier_Extension_Firefox/main/Magnifier.exe";
+      const directUrl = "https://raw.githubusercontent.com/sxmishra17/Magnifier_Extension_Firefox/main/magnifier-1.2.0.zip";
       const a = document.createElement("a");
       a.href = directUrl;
-      a.download = "Magnifier.exe";
+      a.download = "magnifier-1.2.0.zip";
       a.target = "_blank";
       document.body.appendChild(a);
       a.click();

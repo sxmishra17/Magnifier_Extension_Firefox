@@ -54,6 +54,7 @@
   "web_accessible_resources": [
     "locales.js",
     "pdf-viewer/*",
-    "Magnifier.exe"
+    "Magnifier.exe",
+    "magnifier-1.2.0.zip"
   ]
 }
