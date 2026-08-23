@@ -19,6 +19,7 @@ namespace MagnifierApp
         private static ToolStripMenuItem _menuToggle;
         private static ToolStripMenuItem _menuSettings;
         private static ToolStripMenuItem _menuPdf;
+        private static ToolStripMenuItem _menuAbout;
         private static ToolStripMenuItem _menuExit;
         private static HotkeyMessageFilter _hotkeyFilter;
         private static IntPtr _keyboardHook = IntPtr.Zero;
@@ -117,6 +118,9 @@ namespace MagnifierApp
             _trayMenu.Items.Add(_menuPdf);
 
             _trayMenu.Items.Add(new ToolStripSeparator());
+
+            _menuAbout = new ToolStripMenuItem(Localization.Get("AboutMenu"), null, (s, e) => ShowAboutDialog());
+            _trayMenu.Items.Add(_menuAbout);
 
             _menuExit = new ToolStripMenuItem(Localization.Get("Exit"), null, (s, e) => ExitApp());
             _trayMenu.Items.Add(_menuExit);
@@ -255,11 +259,20 @@ namespace MagnifierApp
             _menuToggle.Text = string.Format(Localization.Get("ToggleMagnifier"), _settings.HotkeyDisplay);
             _menuSettings.Text = Localization.Get("SettingsMenu");
             _menuPdf.Text = Localization.Get("PdfViewerMenu");
+            _menuAbout.Text = Localization.Get("AboutMenu");
             _menuExit.Text = Localization.Get("Exit");
 
             if (_trayIcon != null)
             {
                 _trayIcon.Text = string.Format("{0} ({1})", Localization.Get("AppTitle"), _settings.HotkeyDisplay);
+            }
+        }
+
+        private static void ShowAboutDialog()
+        {
+            using (AboutDialog dlg = new AboutDialog())
+            {
+                dlg.ShowDialog();
             }
         }
 

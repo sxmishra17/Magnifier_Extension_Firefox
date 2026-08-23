@@ -10,7 +10,7 @@ if not exist "%CSC_PATH%" (
     exit /b 1
 )
 
-"%CSC_PATH%" /nologo /target:winexe /optimize+ /win32icon:app.ico /reference:System.dll,System.Windows.Forms.dll,System.Drawing.dll,System.Core.dll /out:Magnifier.exe src\Localization.cs src\AppSettings.cs src\NativeMethods.cs src\MagnifierLens.cs src\HotkeyRecorderDialog.cs src\SettingsForm.cs src\PdfViewerForm.cs src\Program.cs
+"%CSC_PATH%" /nologo /target:winexe /optimize+ /win32icon:app.ico /reference:System.dll,System.Windows.Forms.dll,System.Drawing.dll,System.Core.dll /out:Magnifier.exe src\Localization.cs src\AppSettings.cs src\NativeMethods.cs src\MagnifierLens.cs src\HotkeyRecorderDialog.cs src\AboutDialog.cs src\SettingsForm.cs src\PdfViewerForm.cs src\Program.cs
 
 if %ERRORLEVEL% equ 0 (
     echo.

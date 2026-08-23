@@ -84,6 +84,8 @@ namespace MagnifierApp
                 { "ToggleMagnifier", "Toggle Magnifier ({0})" },
                 { "SettingsMenu", "Settings..." },
                 { "PdfViewerMenu", "PDF Viewer..." },
+                { "AboutMenu", "About YuvaTech..." },
+                { "AboutTitle", "About YuvaTech" },
                 { "Exit", "Exit" },
                 { "PdfTitle", "Magnifier PDF Viewer" },
                 { "ChoosePdf", "Choose PDF" },
