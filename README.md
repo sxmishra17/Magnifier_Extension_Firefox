@@ -1,92 +1,97 @@
-# Magnifier — Firefox Extension
+# Magnifier — Firefox Extension & Windows Desktop Application v1.3.0
 
-> Hover over any text, image, or PDF to magnify it with a customizable lens. Choose circle or rectangle shape, zoom 1×–10×, three lens sizes, and five cursor positions.
+![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Firefox%20%7C%20Windows-brightgreen.svg)
+![Developer](https://img.shields.io/badge/developer-Yuvatech%20Solution%20USA%2C%20LLC-orange.svg)
 
----
-
-## Features
-
-- 🔍 **Text Magnification** — Hover over any text on a webpage to see it enlarged in a floating lens
-- 🖼️ **Image Magnification** — Works on images and inline graphics
-- 📄 **PDF Support** — Built-in PDF viewer with magnifier support for local PDF files
-- ⭕ **Circle or Rectangle** — Choose your preferred lens shape
-- 🔎 **Zoom 1×–10×** — Fine-grained zoom control from 1× up to 10×
-- 📐 **Three Lens Sizes** — Small, medium, and large lens options
-- 🖱️ **Five Cursor Positions** — Position the lens relative to your cursor
-- 💾 **Persistent Settings** — All preferences are saved across sessions
-- 🔘 **On/Off Toggle** — Enable or disable the magnifier with one click
+> Hover over any text, image, screen region, or PDF to magnify it with a customizable lens. Includes both a **Firefox Web Extension** and a standalone **Windows Desktop Executable (`Magnifier.exe`)**!
 
 ---
 
-## Installation
+## 🚀 Quick Download
 
-### From Firefox Add-ons (AMO)
-Search **"Magnifier"** on [addons.mozilla.org](https://addons.mozilla.org)
-
-### Developer Install
-1. Open `about:debugging#/runtime/this-firefox`
-2. Click **Load Temporary Add-on**
-3. Select `manifest.json` from this folder
+- 📦 **[Download Windows Desktop App (`Magnifier-Desktop.zip`)](https://raw.githubusercontent.com/sxmishra17/Magnifier_Extension_Firefox/main/Magnifier-Desktop.zip)** — *Contains Magnifier.exe standalone executable*
+- 💻 **[Download Direct Executable (`Magnifier.exe`)](https://raw.githubusercontent.com/sxmishra17/Magnifier_Extension_Firefox/main/Magnifier.exe)** — *Click-and-play portable Windows app*
+- 🧩 **[Download Firefox Add-on (`magnifier-1.3.0.xpi`)](https://raw.githubusercontent.com/sxmishra17/Magnifier_Extension_Firefox/main/magnifier-1.3.0.xpi)** — *Firefox extension package*
 
 ---
 
-## How to Use
+## 🌟 Key Features
 
-1. Click the **Magnifier** icon in the Firefox toolbar to open settings
-2. Toggle the magnifier **ON**
-3. Choose your preferred **zoom level**, **lens shape**, and **size**
-4. Hover over any text or image on the page — a magnified view appears
-5. For PDFs, use the built-in viewer for best results
+### 🖥️ Windows Standalone App (`Magnifier.exe`)
+- ⚡ **Zero Installation & Click-and-Play** — Lightweight (~100 KB), single-file portable Windows executable.
+- 🎯 **Flicker-Free 60 FPS Real-Time Screen Lens** — Powered by GDI+ layered rendering with native `WDA_EXCLUDEFROMCAPTURE` exclusion.
+- ⌨️ **System-Wide Global Hotkey (`Ctrl+M`)** — Toggle the lens anywhere across Windows. Includes an interactive Hotkey Recorder dialog.
+- 📌 **System Tray Toolbar Integration** — Minimizes cleanly to the system tray taskbar menu.
+- 🏢 **About Yuvatech Solution USA, LLC Modal** — Dedicated company info dialog in system tray menu.
+- 🌐 **Multi-Language Auto-Detection** — System language default on initial startup.
+
+### 🧩 Firefox Web Extension
+- 🔍 **Text & Image Magnification** — Hover over any webpage text or image for real-time magnified preview.
+- 📄 **PDF Support** — Built-in localized PDF viewer with magnifier integration.
+- 🏢 **Yuvatech Logo & Branding** — Company logo and branding at the bottom of the extension GUI.
+- ⭕ **Circle or Rectangle Shapes** — Choose circle or rectangle lens shapes with 3 lens sizes (Small, Medium, Large) and 5 cursor positions.
+- 🌐 **10+ Supported Languages** — Auto-detects browser/system language by default.
+- 📱 **Anti-Clipping Warm Theme GUI** — Compact dark glassmorphism layout with smooth scrollbar failsafe.
 
 ---
 
-## Project Structure
+## 🌐 Supported Languages
+
+Both the Windows app and the Firefox extension feature complete localization:
+
+| Code | Language | Native Name |
+|---|---|---|
+| `auto` | Auto-detect (Default) | System / Browser Default |
+| `en` | English | English |
+| `es` | Spanish | Español |
+| `fr` | French | Français |
+| `de` | German | Deutsch |
+| `ja` | Japanese | 日本語 |
+| `zh` | Chinese | 中文 |
+| `hi` | Hindi | हिन्दी |
+| `pt` | Portuguese | Português |
+| `it` | Italian | Italiano |
+| `ru` | Russian | Русский |
+
+---
+
+## 📁 Repository Structure
 
 ```
-├── manifest.json          # MV2 manifest
-├── background.js          # Background script — state management
-├── content.js             # Content script — lens rendering and mouse tracking
-├── content.css            # Lens styles and animations
+├── Magnifier.exe               # Standalone Windows Desktop Executable
+├── Magnifier-Desktop.zip       # Windows Desktop Package (Magnifier.exe inside)
+├── magnifier-1.3.0.xpi         # Packaged Firefox Extension (v1.3.0)
+├── magnifier-1.3.0.zip         # GitHub Release Archive
+├── package-extension.bat       # Firefox extension packager script
+├── build.bat                   # Windows application C# compiler script
+├── manifest.json               # Firefox WebExtension MV2 Manifest
+├── background.js               # Background script state management
+├── content.js                  # Content script lens rendering
+├── content.css                 # Extension lens overlay styles
+├── locales.js                  # Multi-language translation engine
 ├── popup/
-│   ├── popup.html         # Settings popup UI
-│   ├── popup.css          # Popup styles
-│   └── popup.js           # Settings controls
+│   ├── popup.html              # Settings popup UI with Yuvatech logo & download button
+│   ├── popup.css               # Compact warm dark settings layout
+│   └── popup.js                # Live popup settings logic & localization
 ├── pdf-viewer/
-│   ├── viewer.html        # Built-in PDF viewer
-│   ├── viewer.css         # PDF viewer styles
-│   ├── viewer.js          # PDF viewer logic with magnifier integration
-│   └── lib/
-│       ├── pdf.min.js     # PDF.js library
-│       └── pdf.worker.min.js
-└── icons/                 # Extension icons (48, 96px)
+│   ├── viewer.html             # Localized PDF viewer
+│   ├── viewer.css              # PDF viewer styles
+│   └── viewer.js               # PDF rendering with magnifier integration
+├── icons/                      # Extension icons & yuvatechlogo.png
+└── src/                        # C# Desktop App Source Code
+    ├── Program.cs              # Entry point & Tray NotifyIcon
+    ├── MagnifierLens.cs        # Layered window GDI+ screen capture lens
+    ├── SettingsForm.cs         # Settings panel GUI
+    ├── AboutDialog.cs          # Yuvatech Solution USA, LLC company modal
+    ├── Localization.cs        # C# Multi-language engine
+    └── NativeMethods.cs        # Windows API P/Invoke declarations
 ```
 
 ---
 
-## Third-Party Libraries
+## 👨‍💻 Developer & Company
 
-| Library | License | Purpose |
-|---------|---------|---------|
-| [PDF.js](https://github.com/mozilla/pdf.js) | Apache 2.0 | PDF rendering in the built-in viewer |
-
----
-
-## Privacy
-
-**No data leaves your device.** Settings are stored locally using `browser.storage.local`. No external network requests are made.
-
----
-
-## Developer
-
-**YuvaTech**
-
----
-
-## License
-
+Developed by **Satish Mishra**  
+**Yuvatech Solution USA, LLC**  
 All Rights Reserved.
-
----
-
-Developed by **Satish Mishra**, **Yuvatech Solutions USA, LLC**

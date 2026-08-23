@@ -43,7 +43,7 @@ namespace MagnifierApp
             // Version & Description
             Label lblDetails = new Label
             {
-                Text = "Magnifier Desktop v1.2.0\nDeveloped by Yuvatech Solution USA, LLC\n\nReal-time screen & document magnification lens.",
+                Text = "Magnifier Desktop v1.3.0\nDeveloped by Yuvatech Solution USA, LLC\n\nReal-time screen & document magnification lens.",
                 Font = new Font("Segoe UI", 9.5f, FontStyle.Regular),
                 ForeColor = Color.FromArgb(214, 211, 209),
                 Location = new Point(22, 54),
