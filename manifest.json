@@ -54,6 +54,7 @@
   "web_accessible_resources": [
     "locales.js",
     "pdf-viewer/*",
+    "whats-new/*",
     "icons/yuvatechlogo.png",
     "Magnifier.exe",
     "Magnifier-Desktop.zip",

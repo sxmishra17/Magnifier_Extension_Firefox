@@ -1,4 +1,4 @@
-// background.js - Sets default settings on first install
+// background.js - State management & automatic update notification
 
 // Per-tab enabled state (in-memory; never persisted — tab-local only)
 const tabEnabled = new Map();
@@ -7,6 +7,12 @@ browser.runtime.onInstalled.addListener((details) => {
   if (details.reason === "install") {
     // "enabled" is intentionally omitted — it is tab-local, not shared
     browser.storage.sync.set({ zoom: 1.5, lensSize: "medium", lensPosition: "right", lensShape: "rect", language: "auto" });
+  }
+
+  // Automatically open "What's New" page on install or update
+  if (details.reason === "install" || details.reason === "update") {
+    const whatsNewUrl = browser.runtime.getURL("whats-new/whats-new.html");
+    browser.tabs.create({ url: whatsNewUrl }).catch(() => {});
   }
 });
 

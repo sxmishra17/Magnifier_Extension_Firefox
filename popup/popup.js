@@ -206,6 +206,15 @@
       a.click();
       document.body.removeChild(a);
     });
+  // ── Open What's New Release Notes page ──────────────────────────────────
+
+  const btnWhatsNew = document.getElementById("btnWhatsNew");
+  if (btnWhatsNew) {
+    btnWhatsNew.addEventListener("click", () => {
+      const url = browser.runtime.getURL("whats-new/whats-new.html");
+      browser.tabs.create({ url }).catch(() => {});
+      window.close();
+    });
   }
 
   // ── Helpers ──────────────────────────────────────────────────────────────
