@@ -34,8 +34,6 @@
     }
   ],
 
-  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com; object-src 'none'",
-
   "browser_specific_settings": {
     "gecko": {
       "id": "magnifier@yuvatechsolutionsusa.com",

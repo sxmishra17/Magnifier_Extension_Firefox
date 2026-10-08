@@ -92,9 +92,11 @@ Both the Windows app and the Firefox extension feature complete localization:
 │   ├── whats-new.css           # Modern release notes styling
 │   └── whats-new.js            # Release page interactive logic
 ├── pdf-viewer/
-│   ├── viewer.html             # Localized PDF viewer
+│   ├── viewer.html             # Localized PDF viewer (uses local pdf.js)
 │   ├── viewer.css              # PDF viewer styles
-│   └── viewer.js               # PDF rendering with magnifier integration
+│   ├── viewer.js               # PDF rendering with magnifier integration
+│   ├── pdf.min.js              # Bundled PDF.js engine (no remote scripts)
+│   └── pdf.worker.min.js       # Bundled PDF.js Web Worker
 ├── icons/                      # Extension icons & yuvatechlogo.png
 └── src/                        # C# Desktop App Source Code
     ├── Program.cs              # Entry point & Tray NotifyIcon
