@@ -470,6 +470,25 @@ input[type="range"]::-moz-range-thumb:hover {
   letter-spacing: 0.2px;
 }
 
+.company-name-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #a8a29e;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.company-name-link:hover {
+  color: #f59e0b;
+  text-decoration: underline;
+}
+
 .info-button {
   background: rgba(245, 158, 11, 0.18);
   border: 1px solid rgba(245, 158, 11, 0.45);
@@ -498,4 +517,50 @@ input[type="range"]::-moz-range-thumb:hover {
 
 .info-button:active {
   transform: scale(0.92);
+}
+
+.contribute-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 3px;
+}
+
+.contribute-label {
+  font-size: 8.5px;
+  color: #78716c;
+  font-weight: 500;
+}
+
+.contribute-icon-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #a8a29e;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.12s;
+  flex-shrink: 0;
+}
+
+.contribute-icon-btn:hover {
+  background: rgba(0, 112, 186, 0.22);
+  border-color: #0079c1;
+  color: #60b4ff;
+}
+
+.contribute-icon-btn.contribute-icon-bmc:hover {
+  background: rgba(255, 221, 0, 0.18);
+  border-color: #eab308;
+  color: #facc15;
+}
+
+.contribute-icon-btn:active {
+  transform: scale(0.9);
 }

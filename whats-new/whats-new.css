@@ -177,13 +177,198 @@ body {
   transform: translateY(1px);
 }
 
+/* ── Community Grid (Support & Rate) ─────────────────────────── */
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.community-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #201c18;
+  border-radius: 12px;
+  padding: 22px;
+  border: 1px solid #44403c;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-2px);
+}
+
+.bmc-card {
+  border-color: rgba(245, 158, 11, 0.35);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, #201c18 100%);
+}
+
+.bmc-card:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+}
+
+.rate-card {
+  border-color: rgba(234, 88, 12, 0.35);
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.08) 0%, #201c18 100%);
+}
+
+.rate-card:hover {
+  border-color: #f97316;
+  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.15);
+}
+
+.community-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.community-icon {
+  font-size: 26px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.community-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff8f0;
+  margin-bottom: 4px;
+}
+
+.community-header p {
+  font-size: 12.5px;
+  color: #a8a29e;
+  line-height: 1.4;
+}
+
+.donation-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-bmc {
+  text-decoration: none;
+  background: #FFDD00;
+  color: #000000;
+  font-weight: 700;
+  border: 1px solid #eab308;
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.25);
+  width: 100%;
+}
+
+.btn-bmc:hover {
+  filter: brightness(1.08);
+}
+
+.btn-paypal {
+  text-decoration: none;
+  background: linear-gradient(135deg, #0070ba, #003087);
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid #0079c1;
+  box-shadow: 0 4px 12px rgba(0, 112, 186, 0.28);
+  width: 100%;
+}
+
+.btn-paypal:hover {
+  filter: brightness(1.1);
+}
+
+.btn-rate {
+  text-decoration: none;
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+  color: #ffffff;
+  border: 1px solid #f97316;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+  width: 100%;
+}
+
+/* ── Feedback Banner ─────────────────────────────────────────── */
+
+.feedback-banner {
+  margin-top: 24px;
+  background: linear-gradient(135deg, #1c1917 0%, #26221d 100%);
+  border: 1px solid #44403c;
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.feedback-text h4 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #fef3c7;
+  margin-bottom: 4px;
+}
+
+.feedback-text p {
+  font-size: 12.5px;
+  color: #a8a29e;
+}
+
+.feedback-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-contact, .btn-website {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-contact {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fde68a;
+}
+
+.btn-contact:hover {
+  background: rgba(245, 158, 11, 0.22);
+  border-color: #f59e0b;
+}
+
+.btn-website {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+}
+
+.btn-website:hover {
+  background: rgba(59, 130, 246, 0.22);
+  border-color: #3b82f6;
+}
+
 /* ── Footer ──────────────────────────────────────────────────── */
 
 .footer {
-  padding: 20px 32px;
+  padding: 22px 32px;
   background: linear-gradient(135deg, #292524 0%, #1c1917 100%);
   border-top: 1px solid #44403c;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 .company-info {
@@ -200,4 +385,28 @@ body {
   height: 20px;
   width: auto;
   object-fit: contain;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11.5px;
+}
+
+.footer-links a {
+  color: #f59e0b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: #fbbf24;
+  text-decoration: underline;
+}
+
+.footer-sep {
+  color: #57534e;
 }

@@ -206,6 +206,8 @@
       a.click();
       document.body.removeChild(a);
     });
+  }
+
   // ── Open What's New Release Notes page ──────────────────────────────────
 
   const btnWhatsNew = document.getElementById("btnWhatsNew");
@@ -213,6 +215,37 @@
     btnWhatsNew.addEventListener("click", () => {
       const url = browser.runtime.getURL("whats-new/whats-new.html");
       browser.tabs.create({ url }).catch(() => {});
+      window.close();
+    });
+  }
+
+  // ── Company website ──────────────────────────────────────────────────────
+
+  const btnCompanyWebsite = document.getElementById("btnCompanyWebsite");
+  if (btnCompanyWebsite) {
+    btnCompanyWebsite.addEventListener("click", () => {
+      browser.tabs.create({ url: "https://yuvatechsolutionsusa.com" }).catch(() => {});
+      window.close();
+    });
+  }
+
+  // ── Donate via PayPal ────────────────────────────────────────────────────
+
+  const btnDonatePaypal = document.getElementById("btnDonatePaypal");
+  if (btnDonatePaypal) {
+    btnDonatePaypal.addEventListener("click", () => {
+      const url = "https://www.paypal.com/donate/?business=YMZRV5ZW4QJ8U&no_recurring=0&item_name=I+love+to+serve+the+community+for+betterment.+A+small+contribution+can+get+the+development+going+free+of+charge.&currency_code=USD";
+      browser.tabs.create({ url }).catch(() => {});
+      window.close();
+    });
+  }
+
+  // ── Buy Me a Coffee ──────────────────────────────────────────────────────
+
+  const btnDonateBmc = document.getElementById("btnDonateBmc");
+  if (btnDonateBmc) {
+    btnDonateBmc.addEventListener("click", () => {
+      browser.tabs.create({ url: "https://buymeacoffee.com/satishmishra17" }).catch(() => {});
       window.close();
     });
   }

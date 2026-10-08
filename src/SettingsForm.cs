@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace MagnifierApp
@@ -330,7 +331,87 @@ namespace MagnifierApp
                 Size = new Size(ClientSize.Width - padX * 2, 16)
             };
             Controls.Add(_lblSaved);
-            curY += 24;
+            curY += 22;
+
+            // Company Name Link
+            LinkLabel lblCompany = new LinkLabel
+            {
+                Text = "Yuvatech Solution USA, LLC",
+                Font = new Font("Segoe UI", 7.5f, FontStyle.Regular),
+                LinkColor = Color.FromArgb(168, 162, 158),
+                ActiveLinkColor = Color.FromArgb(245, 158, 11),
+                VisitedLinkColor = Color.FromArgb(168, 162, 158),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Location = new Point(padX, curY),
+                Size = new Size(ClientSize.Width - padX * 2, 16),
+                Cursor = Cursors.Hand
+            };
+            lblCompany.LinkClicked += (s, e) =>
+            {
+                try { Process.Start("https://yuvatechsolutionsusa.com"); } catch { }
+            };
+            Controls.Add(lblCompany);
+            curY += 20;
+
+            // Contribute Row
+            Panel contributePanel = new Panel
+            {
+                Location = new Point(padX, curY),
+                Size = new Size(ClientSize.Width - padX * 2, 26),
+                BackColor = Color.Transparent
+            };
+
+            Label lblContribute = new Label
+            {
+                Text = "Contribute:",
+                ForeColor = Color.FromArgb(120, 113, 108),
+                Font = new Font("Segoe UI", 7.5f, FontStyle.Regular),
+                AutoSize = true
+            };
+
+            Button btnPayPal = new Button
+            {
+                Text = "PayPal",
+                Size = new Size(54, 22),
+                FlatStyle = FlatStyle.Flat,
+                BackColor = Color.FromArgb(0, 48, 135),
+                ForeColor = Color.White,
+                Font = new Font("Segoe UI", 7f, FontStyle.Bold),
+                Cursor = Cursors.Hand
+            };
+            btnPayPal.FlatAppearance.BorderColor = Color.FromArgb(0, 121, 193);
+            btnPayPal.Click += (s, e) =>
+            {
+                try { Process.Start("https://www.paypal.com/donate/?business=YMZRV5ZW4QJ8U&no_recurring=0&item_name=I+love+to+serve+the+community+for+betterment.+A+small+contribution+can+get+the+development+going+free+of+charge.&currency_code=USD"); } catch { }
+            };
+
+            Button btnBmc = new Button
+            {
+                Text = "☕ Coffee",
+                Size = new Size(64, 22),
+                FlatStyle = FlatStyle.Flat,
+                BackColor = Color.FromArgb(90, 50, 0),
+                ForeColor = Color.FromArgb(255, 221, 0),
+                Font = new Font("Segoe UI", 7f, FontStyle.Bold),
+                Cursor = Cursors.Hand
+            };
+            btnBmc.FlatAppearance.BorderColor = Color.FromArgb(234, 179, 8);
+            btnBmc.Click += (s, e) =>
+            {
+                try { Process.Start("https://buymeacoffee.com/satishmishra17"); } catch { }
+            };
+
+            int totalW = lblContribute.PreferredWidth + 6 + btnPayPal.Width + 6 + btnBmc.Width;
+            int startX = Math.Max(0, (contributePanel.Width - totalW) / 2);
+            lblContribute.Location = new Point(startX, 4);
+            btnPayPal.Location = new Point(lblContribute.Right + 6, 0);
+            btnBmc.Location = new Point(btnPayPal.Right + 6, 0);
+
+            contributePanel.Controls.Add(lblContribute);
+            contributePanel.Controls.Add(btnPayPal);
+            contributePanel.Controls.Add(btnBmc);
+            Controls.Add(contributePanel);
+            curY += 32;
 
             ClientSize = new Size(330, curY);
         }
