@@ -11,5 +11,6 @@
 [2026-10-07] --> [src/AboutDialog.cs, Magnifier.exe, Magnifier-Desktop.zip, Magnifier-Desktop-v1.3.0.zip] --> [Added "Visit Us" company website button and "View Other Extensions" Firefox add-ons profile button to About dialog] --> [Provided direct access from the desktop app's About window to the company website and developer's Firefox extensions catalog]
 [2026-10-07] --> [README.md, Magnifier-Desktop-v1.3.0.zip] --> [Removed redundant zip file and updated README with all new features, donate links, feedback info, and updated file tree] --> [Kept GitHub repository clean and documentation comprehensive]
 [2026-10-07] --> [pdf-viewer/viewer.html, pdf-viewer/viewer.js, pdf-viewer/pdf.min.js, pdf-viewer/pdf.worker.min.js, manifest.json, magnifier-1.3.0.zip, magnifier-1.3.0.xpi] --> [Bundled pdf.js and worker locally inside the add-on and removed custom CSP from manifest] --> [Resolved Mozilla Add-on Policy warnings against remote scripts and custom CSP]
+[2026-10-07] --> [manifest.json, whats-new/whats-new.html, README.md, magnifier-1.3.0.zip, magnifier-1.3.0.xpi] --> [Updated gecko.id to exact registered AMO GUID {3065b218-9eb0-41cb-b3ab-8ba9a3e7a723} and contact email to satishmishra17@gmail.com] --> [Resolved AMO validation error and synchronized author contact email]
 
 

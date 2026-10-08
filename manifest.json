@@ -3,7 +3,7 @@
   "name": "Magnifier",
   "version": "1.3.0",
   "description": "Hover over any text, image, or PDF to magnify it with a customisable lens. Choose circle or rectangle shape, zoom 1×–10×, three lens sizes, and five cursor positions.",
-  "author": "Magnifier Extension",
+  "author": "Satish Mishra (satishmishra17@gmail.com)",
 
   "icons": {
     "48": "icons/icon-48.png",
@@ -36,7 +36,7 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "magnifier@yuvatechsolutionsusa.com",
+      "id": "{3065b218-9eb0-41cb-b3ab-8ba9a3e7a723}",
       "strict_min_version": "142.0",
       "data_collection_permissions": {
         "required": ["none"]

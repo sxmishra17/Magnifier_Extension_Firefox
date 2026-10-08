@@ -114,7 +114,7 @@ Both the Windows app and the Firefox extension feature complete localization:
 ## 📬 Contact & Feedback
 
 - 🌐 **Company Website**: [yuvatechsolutionsusa.com](https://yuvatechsolutionsusa.com)
-- ✉️ **Email**: [contact@yuvatechsolutionsusa.com](mailto:contact@yuvatechsolutionsusa.com)
+- ✉️ **Email**: [satishmishra17@gmail.com](mailto:satishmishra17@gmail.com)
 
 ---
 
