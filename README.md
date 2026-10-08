@@ -19,20 +19,33 @@
 ## 🌟 Key Features
 
 ### 🖥️ Windows Standalone App (`Magnifier.exe`)
-- ⚡ **Zero Installation & Click-and-Play** — Lightweight (~100 KB), single-file portable Windows executable.
+- ⚡ **Zero Installation & Click-and-Play** — Lightweight (~75 KB), single-file portable Windows executable.
 - 🎯 **Flicker-Free 60 FPS Real-Time Screen Lens** — Powered by GDI+ layered rendering with native `WDA_EXCLUDEFROMCAPTURE` exclusion.
 - ⌨️ **System-Wide Global Hotkey (`Ctrl+M`)** — Toggle the lens anywhere across Windows. Includes an interactive Hotkey Recorder dialog.
 - 📌 **System Tray Toolbar Integration** — Minimizes cleanly to the system tray taskbar menu.
-- 🏢 **About Yuvatech Solution USA, LLC Modal** — Dedicated company info dialog in system tray menu.
-- 🌐 **Multi-Language Auto-Detection** — System language default on initial startup.
+- 🏢 **Enhanced About Dialog** — Includes direct navigation buttons to **Visit Us (yuvatechsolutionsusa.com)**, **View Other Extensions on Firefox**, and the **GitHub Repository**.
+- ☕ **Contribute & Support Options** — Integrated PayPal and Buy Me a Coffee support buttons in the Settings window.
+- 🌐 **Multi-Language Auto-Detection** — System language default on initial startup with support for 12+ languages.
 
 ### 🧩 Firefox Web Extension
 - 🔍 **Text & Image Magnification** — Hover over any webpage text or image for real-time magnified preview.
 - 📄 **PDF Support** — Built-in localized PDF viewer with magnifier integration.
-- 🏢 **Yuvatech Logo & Branding** — Company logo and branding at the bottom of the extension GUI.
+- 📢 **Interactive What's New Release Page** — Dedicated page detailing updates, feature guides, contact email, rate link, and feedback channels (`whats-new/whats-new.html`).
+- ☕ **Contribute Buttons** — PayPal and Buy Me a Coffee icon buttons directly in the popup footer.
+- 🏢 **Company Link & Branding** — Clickable Yuvatech Solution USA, LLC branding directing to the official website.
 - ⭕ **Circle or Rectangle Shapes** — Choose circle or rectangle lens shapes with 3 lens sizes (Small, Medium, Large) and 5 cursor positions.
 - 🌐 **10+ Supported Languages** — Auto-detects browser/system language by default.
 - 📱 **Anti-Clipping Warm Theme GUI** — Compact dark glassmorphism layout with smooth scrollbar failsafe.
+
+---
+
+## ☕ Support Free Development
+
+If you find Magnifier helpful, consider supporting its continued development:
+- ☕ **[Buy Me a Coffee](https://buymeacoffee.com/satishmishra17)**
+- 💳 **[Donate with PayPal](https://www.paypal.com/donate/?business=YMZRV5ZW4QJ8U&no_recurring=0&item_name=I+love+to+serve+the+community+for+betterment.+A+small+contribution+can+get+the+development+going+free+of+charge.&currency_code=USD)**
+- ⭐ **[Rate on Firefox Add-ons](https://addons.mozilla.org/firefox/addon/magnifier/)**
+- 🧩 **[Explore Other Extensions by Developer](https://addons.mozilla.org/en-US/firefox/user/14938505/)**
 
 ---
 
@@ -71,9 +84,13 @@ Both the Windows app and the Firefox extension feature complete localization:
 ├── content.css                 # Extension lens overlay styles
 ├── locales.js                  # Multi-language translation engine
 ├── popup/
-│   ├── popup.html              # Settings popup UI with Yuvatech logo & download button
+│   ├── popup.html              # Settings popup UI with branding & donate buttons
 │   ├── popup.css               # Compact warm dark settings layout
 │   └── popup.js                # Live popup settings logic & localization
+├── whats-new/
+│   ├── whats-new.html          # Interactive release notes & community feedback page
+│   ├── whats-new.css           # Modern release notes styling
+│   └── whats-new.js            # Release page interactive logic
 ├── pdf-viewer/
 │   ├── viewer.html             # Localized PDF viewer
 │   ├── viewer.css              # PDF viewer styles
@@ -82,11 +99,20 @@ Both the Windows app and the Firefox extension feature complete localization:
 └── src/                        # C# Desktop App Source Code
     ├── Program.cs              # Entry point & Tray NotifyIcon
     ├── MagnifierLens.cs        # Layered window GDI+ screen capture lens
-    ├── SettingsForm.cs         # Settings panel GUI
-    ├── AboutDialog.cs          # Yuvatech Solution USA, LLC company modal
+    ├── SettingsForm.cs         # Settings panel GUI with donate buttons
+    ├── AboutDialog.cs          # Company modal with Visit Us & Other Extensions
     ├── Localization.cs        # C# Multi-language engine
+    ├── HotkeyRecorderDialog.cs # Global hotkey configuration dialog
+    ├── PdfViewerForm.cs        # Desktop PDF viewer integration
     └── NativeMethods.cs        # Windows API P/Invoke declarations
 ```
+
+---
+
+## 📬 Contact & Feedback
+
+- 🌐 **Company Website**: [yuvatechsolutionsusa.com](https://yuvatechsolutionsusa.com)
+- ✉️ **Email**: [contact@yuvatechsolutionsusa.com](mailto:contact@yuvatechsolutionsusa.com)
 
 ---
 
